@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<header style="background-image: url('{{ url_for('static', filename='img/tilesCarrots-06.svg')}}')">
+    <img class="logo img-responsive" src="{{ url_for('static', filename='img/Logo.svg')}}" alt="Orange Logo" width="20"
+        height="30" />
+    <span class="span1">
+        <h1>Add the ingredients</h1>
+        <img class="carrot" src="{{ url_for('static', filename='img/Carrots.svg')}}" alt="Carrot">
+    </span>
+</header>
+
+
+<div class='adding'>
+    <h2>Tell us what you have in your fridge, and we’ll see <br>what recipes we can find for you.</h2>
+    <form id="addIngredient">
+        <span class="span2">
+            <input type="text" placeholder="example: red lentils" id="input">
+            <button type="submit" class="add">Add!</button>
+        </span>
+    </form>
+    <button type="button" class="search" id="search">Search for recipes</button>
+
+    <ul id="ingredientList">
+        <li> Carrots </li>
+        <li>Onion</li>
+    </ul>
+</div>
+<!-- <div class='ingredient'>
+    <img class="tiny-carrot" src="{{ url_for('static', filename='img/tiny-carrot.svg')}}" />
+    Carrots
+    <button type="button" class="removeButton">
+        delete
+    </button>
+</div> -->
+
+<script src=" {{ url_for('static', filename='js/index.js') }}"></script>
+
+{% endblock %}
