@@ -23,8 +23,7 @@
     <button type="button" class="search" id="search">Search for recipes</button>
 
     <ul id="ingredientList">
-        <li> Carrots </li>
-        <li>Onion</li>
+
     </ul>
 </div>
 <!-- <div class='ingredient'>
@@ -34,7 +33,9 @@
         delete
     </button>
 </div> -->
-
-<script src=" {{ url_for('static', filename='js/index.js') }}"></script>
+<script>
+    const carrot = "{{ url_for('static', filename='img/tiny-carrot.svg') }}";
+</script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
 {% endblock %}

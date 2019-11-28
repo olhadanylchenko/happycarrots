@@ -1,6 +1,23 @@
 {% extends "layout.html" %}
 
 {% block content %}
-{% include 'partials/jumbotron.html' %}
+<div id="root">
+
+    {% include 'partials/header.html' %}
+
+    <ul class="list recipeList">
+        {% for recipe in response.hits %}
+        <li class="listItem"><img class="recipePic" src="{{recipe.recipe.image}}" width="200" />
+            <h3>{{recipe.recipe.label}}</h3>
+            <hr class="line">
+            <!-- <ul>
+            <li>honey</li>
+            <li>carrots</li>
+        </ul> -->
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
 
 {% endblock %}

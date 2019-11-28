@@ -1,68 +1,70 @@
 "use strict";
 
 
-
-(function () {
-    const input = document.getElementById("input");
-    const buttonSearch = document.getElementById("search");
-    const addIngredientForm = document.getElementById("addIngredient");
-
-    addIngredientForm.addEventListener("submit", () => { })
-})();
+const ingredients = [];
+const ul = document.getElementById("ingredientList");
+const form = document.getElementById("addIngredient");
 
 
-
-let ingredientsList = document.getElementsByTagName("li");
-
-for (var i = 0; i < ingredientsList.length; i++) {
-    var span = document.createElement("span");
-    var deleteButton = document.createTextNode("delete");
-    span.className = "removeButton";
-    span.appendChild(deleteButton);
-    ingredientsList[i].appendChild(span);
-}
-
-// Click on a close button to hide the current list item
-let remove = document.getElementsByClassName("removeButton");
-for (let i = 0; i < remove.length; i++) {
-    remove[i].onclick = function () {
-        let div = this.parentElement;
-        div.style.display = "none";
-    }
-}
-
-document.getElementById("addIngredient").addEventListener('submit', function (e) {
+function addIngredient(e) {
     e.preventDefault();
-    newIngredient();
-});
+    let ingredientName = document.getElementById("input").value;
+    form.reset();
+    if (ingredientName.trim() != "") {
+        ingredients.push(ingredientName);
+        appendIngredient(ingredientName);
+    }
+};
 
-function newIngredient() {
+function appendIngredient(ingredientName) {
+    let ingredient = document.createTextNode(ingredientName);
     let li = document.createElement("li");
-    var inputValue = document.getElementById("input").value;
-    var ingredient = document.createTextNode(inputValue);
+    let tinyCarrot = document.createElement("img");
+    tinyCarrot.src = carrot;
+    tinyCarrot.className = "tiny-carrot";
+    li.appendChild(tinyCarrot);
     li.appendChild(ingredient);
-    if (inputValue === '') {
-        alert("You must write something!");
-    } else {
-        document.getElementById("ingredientList").appendChild(li);
-    }
-    // document.getElementById("input").value = "";
+    ul.appendChild(li);
 
-    for (var i = 0; i < ingredientsList.length; i++) {
-        var span = document.createElement("span");
-        var deleteButton = document.createTextNode("delete");
-        span.className = "removeButton";
-        span.appendChild(deleteButton);
-        ingredientsList[i].appendChild(span);
-    }
+    var deleteButton = document.createElement("button");
+    var x = document.createTextNode("\u00D7");
+    deleteButton.className = "removeButton";
+    deleteButton.type = "button";
+    deleteButton.appendChild(x);
+    li.appendChild(deleteButton);
 
-    for (i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
-            var div = this.parentElement;
-            div.style.display = "none";
+    deleteButton.onclick = function () {
+        let index = ingredients.indexOf(ingredientName);
+        if (index > -1) {
+            ingredients.splice(index, 1);
+            li.remove();
         }
     }
+
+};
+
+
+
+
+form.addEventListener('submit', addIngredient);
+
+document.getElementById("search").addEventListener("click", () => {
+    window.location.href = `${window.location.href}${getSearchPath()}`;
+    // console.log(getSearchPath());
+})
+
+function getSearchPath() {
+    let searchPath = "search?ingredients=";
+    ingredients.forEach((ingredient, index) => {
+        if (index != ingredients.length - 1) {
+            searchPath += ingredient + ",";
+        } else {
+            searchPath += ingredient;
+        }
+    });
+    return searchPath;
 }
+
 
 
 

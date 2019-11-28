@@ -191,29 +191,29 @@ input {
 }    
 
 ul li {
-    cursor: pointer;    
+    cursor: pointer;  
     display: flex;
-    justify-content: space-around;
-    padding: 5px 0 5px 40px;
+    /* padding: 5px 0 5px 10px; */
+    align-items: center;
     background-color: #003333;
     color: white;
     width: 300px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
-    border-radius: 20px;
-      justify-content: space-between;
+    border-radius: 20px; 
+    justify-content: space-between; 
 }
-.removeButton {
 
+.removeButton {
     background-color: rgb(167, 12, 12);
     border: 0;
     color: #fff;
     border-radius: 20px;
     font-weight: 300;
-    font-size: 0.7em;
+    font-size: 1.1em;
     margin-right: -1px;
-    padding: 1px 7px 2px;
+    padding: 1px 17px 2px;
 }
 
 .tiny-carrot {
@@ -230,7 +230,7 @@ ul li {
     flex-flow: column;
     justify-self: center;
     margin: 10px;
-    
+    color: #212529;
 }
 
 .recipePic {

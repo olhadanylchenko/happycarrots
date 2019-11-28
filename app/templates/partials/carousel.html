@@ -1,9 +1,0 @@
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-        {%for img in carousel%}
-        <div class="carousel-item {% if loop.first %} active{% endif %}">
-            <img class="d-block w-100" src="{{img.url}}" alt="{{img.alt}}">
-        </div>
-        {%endfor%}
-    </div>
-</div>
