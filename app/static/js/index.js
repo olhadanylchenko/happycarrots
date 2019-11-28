@@ -40,17 +40,15 @@ function appendIngredient(ingredientName) {
             li.remove();
         }
     }
-
 };
-
-
 
 
 form.addEventListener('submit', addIngredient);
 
 document.getElementById("search").addEventListener("click", () => {
-    window.location.href = `${window.location.href}${getSearchPath()}`;
-    // console.log(getSearchPath());
+    if (ingredients.length !== 0) {
+        window.location.href = `${window.location.href}${getSearchPath()}`;
+    }
 })
 
 function getSearchPath() {
@@ -64,25 +62,3 @@ function getSearchPath() {
     });
     return searchPath;
 }
-
-
-
-
-
-
-
-// getSearchPath = () => {
-//     let searchPath = "/search?ingredients=";
-//     this.props.ingredients.forEach((ingredient, index) => {
-//         if (index != this.props.ingredients.length - 1) {
-//             searchPath += ingredient.title + ",";
-//         } else {
-//             searchPath += ingredient.title;
-//         }
-//     });
-//     return searchPath;
-// };
-
-
-
-console.log('boom bitch!')
