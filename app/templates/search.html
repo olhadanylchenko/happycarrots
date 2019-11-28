@@ -7,7 +7,7 @@
 
     <ul class="list recipeList">
         {% for recipe in response.hits %}
-        <li class="listItem"><img class="recipePic" src="{{recipe.recipe.image}}" width="200" />
+        <li class="listItem"><img class="recipePic" src="{{recipe.recipe.image}}" />
             <h3>{{recipe.recipe.label}}</h3>
             <hr class="line">
             <!-- <ul>
