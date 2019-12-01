@@ -7,9 +7,12 @@
 
     <ul class="list recipeList">
         {% for recipe in response.hits %}
-        <li class="listItem"><img class="recipePic" src="{{recipe.recipe.image}}" />
-            <h3>{{recipe.recipe.label}}</h3>
-            <hr class="line">
+        <li class="listItem">
+            <a href="/recipe?recipe={{ get_uri(recipe.recipe.uri, safe='') }}">
+                <img class="recipePic" src="{{recipe.recipe.image}}" />
+                <h3>{{recipe.recipe.label}}</h3>
+                <hr class="line">
+            </a>
             <!-- <ul>
             <li>honey</li>
             <li>carrots</li>

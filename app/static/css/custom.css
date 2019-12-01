@@ -3,10 +3,7 @@
 
 
 
-button {
-    font-size: 1.1rem;
 
-}
 
 * {
     box-sizing: border-box;
@@ -19,6 +16,15 @@ button {
     line-height: 1.4; 
   }
   
+  body.recipe {
+      background-color: #cff;
+  }
+
+  button {
+    font-size: 1.1rem;
+
+}
+
   a {
   color: #333;
   text-decoration: none;
@@ -26,7 +32,7 @@ button {
 
 
 body {
-    background-color: #66CC99;
+    background-color: #66CC99; 
     font-family: 'Roboto', sans-serif;
     margin: 0;
 }
@@ -43,6 +49,8 @@ header {
     height: 33vh;
     padding-top: 30px;
     margin: 0;
+    border-bottom: 1px solid #3f887e;
+
 }
 
 .headerMini {
@@ -56,6 +64,7 @@ header {
     min-height: 100px;
     height: 110px;
     margin: 0;
+    border-bottom: 1px solid #3f887e;
 }
 
 .logo {
@@ -107,7 +116,7 @@ h1 {
     text-align: center;
 }
 
-h2 {
+.adding h2 {
     /* display: flex;
     margin-left: auto;
     margin-right: auto; */
@@ -188,7 +197,7 @@ input {
     margin-top: 15px;
 }    
 
-ul li {
+#ingredientList li {
     cursor: pointer;  
     display: flex;
     /* padding: 5px 0 5px 10px; */
@@ -258,3 +267,42 @@ ul li {
     padding: 10px;
 }
 
+.meal {
+	width: 80%;
+	margin: 4rem 15% 5rem 25%;
+    max-width: 800px; 
+    font-family: 'AdobeGaramondW01-Regula', georgia, serif;
+
+}
+
+.mealName {
+    
+        font-family: 'BauerBodoniW01-BoldDisp', georgia, serif;
+        font-size: 2rem;
+        color: #3f887e;
+        margin: 0;
+        margin-bottom: 1rem;
+        line-height: 1.1em; 
+    }
+
+.mealImage {
+    width: calc(15vw + 50px);
+    float: left;
+    margin: 1em;
+    margin-top: 9px;
+    margin-left: 0;
+    margin-top: 4px;
+}
+
+.instructions {
+    padding-left: calc(17vw + 60px);
+}
+
+h2 {
+    margin-top: 0px;
+    padding-top: 0px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: calc(15px + 0.5vh + 0.5vw);
+    color: #3f887e;
+}

@@ -1,7 +1,21 @@
 {% extends "layout.html" %}
+{% include 'partials/header.html' %}
 
 {% block content %}
-{% include 'partials/jumbotron.html' %}
-{% include 'partials/carousel.html' %}
+
+<div class="meal">
+    <h1 class="mealName">{{response[0].label}}</h1>
+    <img src="{{response[0].image}}" alt="" class="mealImage" />
+    <h2>Ingredients:</h2>
+    <ul class="instructions">
+        {% for ingredient in response[0].ingredientLines %}
+        <li> {{ingredient}} </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Click <a href="{{response[0].url}}">here</a> to view the full recipe</h2>
+</div>
+
+
 
 {% endblock %}
