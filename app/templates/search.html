@@ -20,6 +20,10 @@
         </li>
         {% endfor %}
     </ul>
+
+    {% if not response.hits %}
+    <img src="{{ url_for('static', filename='img/404-carrot.jpg')}}" alt="carrot">
+    {% endif %}
 </div>
 
 
