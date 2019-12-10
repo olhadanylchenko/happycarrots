@@ -22,7 +22,12 @@
     </ul>
 
     {% if not response.hits %}
-    <img src="{{ url_for('static', filename='img/404-carrot.svg')}}" alt="carrot">
+    <div class="no-result">
+        <img src="{{ url_for('static', filename='img/404carrot.svg')}}" alt="carrot"
+            class="img-responsive no-result-img" width="200">
+        <h2 class="no-result-h2">Oh no... No recipes.. Want to try again with other ingredients?</h2>
+        <a class="add" href="/">Try again</a>
+    </div>
     {% endif %}
 </div>
 
