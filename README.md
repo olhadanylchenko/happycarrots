@@ -1,6 +1,6 @@
 # Happy Carrots
 
-A vegan recipe website. You can enter ingredients you already have, and the app makes an API call to find recipes that match!
+A vegan recipe website. You can enter ingredients you already have, and the app finds recipes that match!
 
 ## Add Ingredients
 ![Happy Carrots Homepage](https://raw.githubusercontent.com/olhadanylchenko/happycarrots/master/screenshot1.png)
